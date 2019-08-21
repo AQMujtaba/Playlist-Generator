@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import spotipy
@@ -11,9 +8,6 @@ import spotipy.util as util
 import os
 import sys
 import json
-
-
-# In[ ]:
 
 
 def gather_playlist():
@@ -50,9 +44,6 @@ def gather_playlist():
     return tracklist
 
 
-# In[ ]:
-
-
 def create_playlist(username, tracklist, client):
     playlist_name = input("Enter a playlist name: ")
     
@@ -85,9 +76,6 @@ def create_playlist(username, tracklist, client):
         print("Couldn't add all tracks")
 
 
-# In[ ]:
-
-
 def main():
     USERNAME = os.environ.get("SPOTIPY_USER")
     scope = ("user-top-read playlist-modify-private "
@@ -105,9 +93,5 @@ def main():
     create_playlist(USERNAME, tracklist, client)
 
 
-# In[ ]:
-
-
 if __name__ == "__main__":
     main()
-
